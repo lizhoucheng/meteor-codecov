@@ -25,7 +25,7 @@ jobs:
           command: "meteor npm run test"
       - run:
           name: "Codedev uploader"
-          command: "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && pwd && ./codecov -f .coverage/json_summary.json"
+          command: "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && pwd && ./codecov"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

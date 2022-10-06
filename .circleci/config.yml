@@ -17,6 +17,15 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: "Install dependencies"
+          command: "command -v meteor >/dev/null 2>&1 || (npm install --prefix=$HOME/.local -g meteor && echo 'export PATH=$HOME/.meteor:$PATH' >> $BASH_ENV) && meteor npm install"
+      - run:
+          name: 'Run test'
+          command: "meteor npm run test"
+      - run:
+          name: "Codedev uploader"
+          command: "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && ./codecov"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

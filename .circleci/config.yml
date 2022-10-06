@@ -19,7 +19,7 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: "Install dependencies"
-          command: "command -v meteor >/dev/null 2>&1 || (npm install --prefix=$HOME/.local -g meteor && echo 'export PATH=$HOME/.meteor:$PATH' >> $BASH_ENV) && meteor npm install"
+          command: "command -v meteor >/dev/null 2>&1 || (npm install --prefix=$HOME/.local -g meteor && echo 'export PATH=$HOME/.meteor:$PATH' >> $BASH_ENV) && npm install"
       - run:
           name: 'Run test'
           command: "meteor npm run test"

@@ -5,6 +5,14 @@ function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
 }
 
+function notTested() {
+  if (LinksCollection) {
+    return 1;
+  }
+
+  return 2;
+}
+
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
   if (LinksCollection.find().count() === 0) {
@@ -27,5 +35,7 @@ Meteor.startup(() => {
       title: 'Discussions',
       url: 'https://forums.meteor.com'
     });
+
+    notTested();
   }
 });

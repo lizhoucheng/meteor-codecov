@@ -5,6 +5,10 @@ function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
 }
 
+function notTested() {
+  console.log('this is a function not included in test');
+}
+
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
   if (LinksCollection.find().count() === 0) {
@@ -28,4 +32,5 @@ Meteor.startup(() => {
       url: 'https://forums.meteor.com'
     });
   }
+  notTested();
 });

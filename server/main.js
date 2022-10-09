@@ -32,5 +32,4 @@ Meteor.startup(() => {
       url: 'https://forums.meteor.com'
     });
   }
-  notTested();
 });

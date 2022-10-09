@@ -22,7 +22,7 @@ jobs:
           command: "command -v meteor >/dev/null 2>&1 || (npm install --prefix=$HOME/.local -g meteor && echo 'export PATH=$HOME/.meteor:$PATH' >> $BASH_ENV) && npm install"
       - run:
           name: 'Run test'
-          command: "meteor npm run test"
+          command: "meteor npm run test && npm run jest-test"
       - run:
           name: "Codedev uploader"
           command: "curl -Os https://uploader.codecov.io/latest/linux/codecov && chmod +x codecov && pwd && ./codecov"
